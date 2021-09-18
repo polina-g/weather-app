@@ -19,7 +19,7 @@ function handleWeatherData (evt) {
     evt.preventDefault();
     let cityName = $input.val();
     $input.val('');
-    $.ajax(`${BASE_URL}weather?q=${cityName}&appid=${API_KEY}`).then(function(data) {
+    $.ajax(`${BASE_URL}weather?q=${cityName}&appid=${API_KEY}&units=imperial`).then(function(data) {
         weatherData = data;
         renderTemplate();
     }, function(error){
@@ -28,17 +28,13 @@ function handleWeatherData (evt) {
 
     function renderTemplate() {
         $city.text(`Weather For: ${weatherData.name}`);
-        $temperature.text(`Temperature: ${kToF(weatherData.main.temp)}`).append('&#176; F');
-        $feelsLike.text(`Feels Like: ${kToF(weatherData.main.feels_like)}`).append('&#176; F');
+        $temperature.text(`Temperature: ${weatherData.main.temp}`).append('&#176; F');
+        $feelsLike.text(`Feels Like: ${weatherData.main.feels_like}`).append('&#176; F');
         $weather.text(`Weather: ${weatherData.weather[0].description}`)
 
     }
 
 }
-
-    function kToF(kTemperature) {
-        return Math.round((parseInt(kTemperature) - 273.25) * 9/5 + 32);
-    }
 
 
     
