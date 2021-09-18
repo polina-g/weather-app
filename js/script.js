@@ -27,10 +27,10 @@ function handleWeatherData (evt) {
     });
 
     function renderTemplate() {
-        $city.text(`Weather For: ${weatherData.name}`);
-        $temperature.text(`Temperature: ${weatherData.main.temp}`).append('&#176; F');
-        $feelsLike.text(`Feels Like: ${weatherData.main.feels_like}`).append('&#176; F');
-        $weather.text(`Weather: ${weatherData.weather[0].description}`)
+        $city.siblings().text(`${weatherData.name}`);
+        $temperature.siblings().text(`${weatherData.main.temp}`).append('&#176; F');
+        $feelsLike.siblings().text(`${weatherData.main.feels_like}`).append('&#176; F');
+        $weather.siblings().text(`${weatherData.weather[0].description}`)
 
     }
 

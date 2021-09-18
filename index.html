@@ -12,14 +12,30 @@
 <body>
     <main>
         <h1>AJAX Weather Lab</h1>
-        <p id="city">Weather For: </p>
-        <p id="temperature">Temperature: </p>
-        <p id="feels-like">Feels Like: </p>
-        <p id="weather">Weather: </p>
         <form>
-            <input type="text" placeholder="City Name (e.g. Boston)">
+            <label for="cityName">Enter city name: </label>
+            <input type="text" placeholder="(e.g. Boston)" id="cityName">
             <input type="submit" value="Get Weather Info">
         </form>
+        <div id="weather-result-container">
+            <div>
+                <p id="city">Weather For: </p>
+                <div class="result"></div>
+            </div>
+            <div>
+                <p id="temperature">Temperature: </p>
+                <div class="result"></div>
+            </div>
+            <div>
+                <p id="feels-like">Feels Like: </p>
+                <div class="result"></div>
+            </div>
+            <div>
+                <p id="weather">Weather: </p>
+                <div class="result"></div>
+            </div>
+        </div>
+
     </main>
 </body>
 </html>
