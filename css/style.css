@@ -17,6 +17,12 @@ body {
     background-repeat: no-repeat;
 }
 
+#top-container, #result-container {
+    width: 85%;
+    margin: 0 auto;
+}
+
+
 h1 {
     padding-top: 30px; 
     font-family: 'Neucha', cursive;
@@ -29,7 +35,6 @@ h1 {
     background-color: var(--div-bg-color);
     border: 2px solid var(--text-color); 
     color: var(--text-color);
-    width: 85%;
     margin: 20px auto;
 }
 
@@ -62,7 +67,7 @@ input[type="text"] {
     font-family: 'Cinzel', serif;
 }
 
-#days {
+#forecast-days {
     height: 50%;
     margin-left: 10px; 
     border: 2px solid var(--text-color); 
@@ -83,8 +88,7 @@ input[type="submit"] {
     font-family: 'Neucha', cursive;
     font-size: 18px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
-    margin-right: 10px; 
-    margin-left: 15px;
+    margin: 0 10px 0 15px; 
 
 }
 
@@ -93,40 +97,38 @@ input[type="submit"] {
     border: 2px solid var(--text-color); 
     color: var(--text-color);
     font-size: 24px;
-    width: 85%;
-    margin: 0 auto;
-    margin-top: 30px;
+    margin: 30px auto 0px auto; 
     font-family: 'Neucha', cursive;
 }
 
-#weather-for>p {
+.city {
     margin:10px auto; 
 }
 
-#weather-result-container {
+
+.weather-result-container {
     margin-top: 30px; 
     display: flex; 
-    justify-content: space-evenly;
+    justify-content: space-between;
     font-family: 'Neucha', cursive;
 }
 
-#weather-result-container > div {
-    height: 200px;
-    width: 230px; 
+.weather-result-container > div {
     display: flex;
     flex-direction: column; 
     background-color: var(--div-bg-color);
     border: 2px solid var(--text-color); 
     color: var(--text-color);
     font-size: 24px;
+    height: 200px;
+    width: 230px; 
 }
 
-#weather-result-container > div:hover {
+.weather-result-container > div:hover {
     box-shadow:20px 20px 50px 10px #9d94adab;
 }
 
-
-#city, #temperature, #feels-like, #weather {
+.day, .city, .temperature, .feels-like, .weather {
     text-align: center;
 }
 
