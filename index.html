@@ -20,34 +20,44 @@
     <title>Weather App</title>
 </head>
 <body>
+   <header></header>
     <main>
-        <nav class='border-shadow'>
+        <section id="top-container" class="border-shadow">
             <h1 >AJAX Weather Lab</h1>
-        </nav>
-        <form class='border-shadow'>
-            <label for="cityName">Enter city name: </label>
-            <input type="text" placeholder="(e.g. Boston)" id="cityName">
-            <input type="submit" value="Get Weather Info">
-        </form>
-        <div id="weather-result-container">
-            <div class='border-shadow'>
+            <form>
+                <label for="cityName">Enter city name: </label>
+                <input type="text" placeholder="(e.g. Boston)" id="cityName">
+                <select id="days" name="days" class="button-hover">
+                    <option value="howMany" disabled selected>How manys days?</option>
+                    <option value="today">Just today</option>
+                    <option value="twoDays">Today and Tomorrow</option>
+                    <option value="threeDays">Three days</option>
+                    <option value="fourDays">Four days</option>
+                    <option value="fiveDays">Five days</option>
+                </select>
+                <input type="submit" class="button-hover" value="Get Weather Info">
+            </form>
+        </section>
+        <section id="result-container">
+            <div id="weather-for" class='border-shadow'>
                 <p id="city">Weather For: </p>
                 <div class="result"></div>
             </div>
-            <div class='border-shadow'>
-                <p id="temperature">Temperature: </p>
-                <div class="result"></div>
+            <div id="weather-result-container">
+                <div class='border-shadow'>
+                    <p id="temperature">Temperature: </p>
+                    <div class="result"></div>
+                </div>
+                <div class='border-shadow'>
+                    <p id="feels-like">Feels Like: </p>
+                    <div class="result"></div>
+                </div class='border-shadow'>
+                <div class='border-shadow'>
+                    <p id="weather">Weather: </p>
+                    <div class="result"></div>
+                </div>
             </div>
-            <div class='border-shadow'>
-                <p id="feels-like">Feels Like: </p>
-                <div class="result"></div>
-            </div class='border-shadow'>
-            <div class='border-shadow'>
-                <p id="weather">Weather: </p>
-                <div class="result"></div>
-            </div>
-        </div>
-
+        </section>
     </main>
 </body>
 </html>

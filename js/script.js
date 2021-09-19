@@ -1,4 +1,4 @@
-//$(function() {
+$(function() {
 //GLOBAL VARIABLES AND CONSTANTS
 const API_KEY = 'a0644fddc5d5dbb6f9d0afa73d298677';
 const BASE_URL = 'https://api.openweathermap.org/data/2.5/';
@@ -12,6 +12,7 @@ const $weather = $('#weather')
 const $input = $('input[type=text]')
 const $getWeather = $('input[type=submit]')
 const $form = $('form');
+const $result = $('#weather-result-container') 
 
 $form.on('submit', handleWeatherData);
 
@@ -37,9 +38,4 @@ function handleWeatherData (evt) {
 }
 
 
-    
-
-
-
-
-//});
+});
