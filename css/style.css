@@ -14,7 +14,7 @@ body {
     width: 100vw;
     background: URL('https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/v1015-113-kstoplvw.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=9396da7ebae190efb5b07eef088e6594');
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat:repeat-y;
 }
 
 #top-container, #result-container {
