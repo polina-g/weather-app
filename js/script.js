@@ -27,6 +27,8 @@ const $form = $('form');
 $form.on('submit', handleWeatherData);
 
 function handleWeatherData (evt) {
+    $('.clone').remove();
+
     evt.preventDefault();
     //Call current weather API to determine the lat and lon of the requested location
     let cityName = $input.val();
@@ -40,7 +42,7 @@ function handleWeatherData (evt) {
         let forecastDays = parseInt($forecastDays.val());
 
         //Call OneCall API with determined lat and lon
-        $.ajax(`${BASE_URL}onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly&units=imperial&appid=${API_KEY}`).then(function(data) {
+        $.ajax(`${BASE_URL_FORECAST}onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly&units=imperial&appid=${API_KEY}`).then(function(data) {
             weatherData = data;
             renderTemplate(forecastDays);
         }, function(error){
@@ -63,7 +65,7 @@ function handleWeatherData (evt) {
                 $feelsLike.siblings().text(`${weatherData.current.feels_like}`).append('&#176; F');
                 $weather.siblings().text(`${weatherData.current.weather[0].description}`)
             } else {
-                $weatherContainer.clone().appendTo('#result-container')
+                $weatherContainer.clone().addClass('clone').appendTo('#result-container');
                 $('.day').last().siblings().text(`${getDate(weatherData.daily[i].dt)}`)
                 $('.temperature').last().siblings().text(`${weatherData.daily[i].temp.day}`).append('&#176; F');
                 $('.feels-like').last().siblings().text(`${weatherData.daily[i].feels_like.day}`).append('&#176; F');
